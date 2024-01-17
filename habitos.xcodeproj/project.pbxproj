@@ -11,6 +11,18 @@
 		0E3F6CB32B58475900F71642 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CB22B58475900F71642 /* ContentView.swift */; };
 		0E3F6CB52B58475A00F71642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F6CB42B58475A00F71642 /* Assets.xcassets */; };
 		0E3F6CB82B58475A00F71642 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3F6CB72B58475A00F71642 /* Preview Assets.xcassets */; };
+		0E3F6CBF2B5847C000F71642 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CBE2B5847C000F71642 /* Coordinator.swift */; };
+		0E3F6CC12B58480800F71642 /* UICalendarViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CC02B58480800F71642 /* UICalendarViewRepresentable.swift */; };
+		0E3F6CC42B58487800F71642 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CC32B58487800F71642 /* Habit.swift */; };
+		0E3F6CD02B58494800F71642 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CC92B58494800F71642 /* HabitDetailView.swift */; };
+		0E3F6CD12B58494800F71642 /* HabitsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CCA2B58494800F71642 /* HabitsMainView.swift */; };
+		0E3F6CD22B58494800F71642 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CCB2B58494800F71642 /* HabitRowView.swift */; };
+		0E3F6CD32B58494800F71642 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CCC2B58494800F71642 /* NewHabitView.swift */; };
+		0E3F6CD42B58494800F71642 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CCD2B58494800F71642 /* HabitsViewModel.swift */; };
+		0E3F6CD52B58494800F71642 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CCF2B58494800F71642 /* LeaderboardView.swift */; };
+		0E3F6CDD2B58497B00F71642 /* HabitLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CD92B58497B00F71642 /* HabitLocalService.swift */; };
+		0E3F6CDE2B58497B00F71642 /* UserDefaultsHabitLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CDA2B58497B00F71642 /* UserDefaultsHabitLocalService.swift */; };
+		0E3F6CDF2B58497B00F71642 /* HabitsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CDC2B58497B00F71642 /* HabitsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +31,18 @@
 		0E3F6CB22B58475900F71642 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E3F6CB42B58475A00F71642 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3F6CB72B58475A00F71642 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0E3F6CBE2B5847C000F71642 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0E3F6CC02B58480800F71642 /* UICalendarViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICalendarViewRepresentable.swift; sourceTree = "<group>"; };
+		0E3F6CC32B58487800F71642 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		0E3F6CC92B58494800F71642 /* HabitDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		0E3F6CCA2B58494800F71642 /* HabitsMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsMainView.swift; sourceTree = "<group>"; };
+		0E3F6CCB2B58494800F71642 /* HabitRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
+		0E3F6CCC2B58494800F71642 /* NewHabitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		0E3F6CCD2B58494800F71642 /* HabitsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		0E3F6CCF2B58494800F71642 /* LeaderboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		0E3F6CD92B58497B00F71642 /* HabitLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitLocalService.swift; sourceTree = "<group>"; };
+		0E3F6CDA2B58497B00F71642 /* UserDefaultsHabitLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHabitLocalService.swift; sourceTree = "<group>"; };
+		0E3F6CDC2B58497B00F71642 /* HabitsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +75,16 @@
 		0E3F6CAF2B58475900F71642 /* habitos */ = {
 			isa = PBXGroup;
 			children = (
+				0E3F6CDB2B58497B00F71642 /* Repositories */,
+				0E3F6CD62B58497B00F71642 /* Services */,
+				0E3F6CC22B58486600F71642 /* Entities */,
+				0E3F6CC52B58491200F71642 /* Features */,
 				0E3F6CB02B58475900F71642 /* habitosApp.swift */,
 				0E3F6CB22B58475900F71642 /* ContentView.swift */,
+				0E3F6CBE2B5847C000F71642 /* Coordinator.swift */,
 				0E3F6CB42B58475A00F71642 /* Assets.xcassets */,
 				0E3F6CB62B58475A00F71642 /* Preview Content */,
+				0E3F6CC02B58480800F71642 /* UICalendarViewRepresentable.swift */,
 			);
 			path = habitos;
 			sourceTree = "<group>";
@@ -65,6 +95,92 @@
 				0E3F6CB72B58475A00F71642 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0E3F6CC22B58486600F71642 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CC32B58487800F71642 /* Habit.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0E3F6CC52B58491200F71642 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CC62B58491C00F71642 /* Habits */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0E3F6CC62B58491C00F71642 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CC72B58494800F71642 /* Features */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		0E3F6CC72B58494800F71642 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CC82B58494800F71642 /* Habits */,
+				0E3F6CCE2B58494800F71642 /* Leaderboard */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0E3F6CC82B58494800F71642 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CC92B58494800F71642 /* HabitDetailView.swift */,
+				0E3F6CCA2B58494800F71642 /* HabitsMainView.swift */,
+				0E3F6CCB2B58494800F71642 /* HabitRowView.swift */,
+				0E3F6CCC2B58494800F71642 /* NewHabitView.swift */,
+				0E3F6CCD2B58494800F71642 /* HabitsViewModel.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		0E3F6CCE2B58494800F71642 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CCF2B58494800F71642 /* LeaderboardView.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		0E3F6CD62B58497B00F71642 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CD72B58497B00F71642 /* Habits */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E3F6CD72B58497B00F71642 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CD82B58497B00F71642 /* Local */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		0E3F6CD82B58497B00F71642 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CD92B58497B00F71642 /* HabitLocalService.swift */,
+				0E3F6CDA2B58497B00F71642 /* UserDefaultsHabitLocalService.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		0E3F6CDB2B58497B00F71642 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0E3F6CDC2B58497B00F71642 /* HabitsRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +253,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3F6CD22B58494800F71642 /* HabitRowView.swift in Sources */,
 				0E3F6CB32B58475900F71642 /* ContentView.swift in Sources */,
+				0E3F6CC42B58487800F71642 /* Habit.swift in Sources */,
+				0E3F6CD02B58494800F71642 /* HabitDetailView.swift in Sources */,
+				0E3F6CC12B58480800F71642 /* UICalendarViewRepresentable.swift in Sources */,
+				0E3F6CD42B58494800F71642 /* HabitsViewModel.swift in Sources */,
+				0E3F6CDD2B58497B00F71642 /* HabitLocalService.swift in Sources */,
+				0E3F6CD12B58494800F71642 /* HabitsMainView.swift in Sources */,
+				0E3F6CD52B58494800F71642 /* LeaderboardView.swift in Sources */,
+				0E3F6CDE2B58497B00F71642 /* UserDefaultsHabitLocalService.swift in Sources */,
+				0E3F6CDF2B58497B00F71642 /* HabitsRepository.swift in Sources */,
+				0E3F6CD32B58494800F71642 /* NewHabitView.swift in Sources */,
 				0E3F6CB12B58475900F71642 /* habitosApp.swift in Sources */,
+				0E3F6CBF2B5847C000F71642 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

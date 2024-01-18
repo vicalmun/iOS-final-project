@@ -41,6 +41,10 @@ class Coordinator: ObservableObject {
         NewHabitView(habitsViewModel: self.makeHabitsViewViewModel())
     }
     
+    func makeEditHabitView(habit: Habit) -> EditHabitView {
+        EditHabitView(habit: habit, viewModel: self.makeHabitsViewViewModel())
+    }
+    
     // MARK: - LeaderBoardView
     func makeLeaderboardView() -> LeaderboardView {
         LeaderboardView()

@@ -23,6 +23,7 @@
 		0E3F6CDD2B58497B00F71642 /* HabitLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CD92B58497B00F71642 /* HabitLocalService.swift */; };
 		0E3F6CDE2B58497B00F71642 /* UserDefaultsHabitLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CDA2B58497B00F71642 /* UserDefaultsHabitLocalService.swift */; };
 		0E3F6CDF2B58497B00F71642 /* HabitsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3F6CDC2B58497B00F71642 /* HabitsRepository.swift */; };
+		0ED436902B58AFFA006DA909 /* EditHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED4368F2B58AFFA006DA909 /* EditHabitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		0E3F6CD92B58497B00F71642 /* HabitLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitLocalService.swift; sourceTree = "<group>"; };
 		0E3F6CDA2B58497B00F71642 /* UserDefaultsHabitLocalService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHabitLocalService.swift; sourceTree = "<group>"; };
 		0E3F6CDC2B58497B00F71642 /* HabitsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsRepository.swift; sourceTree = "<group>"; };
+		0ED4368F2B58AFFA006DA909 /* EditHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				0E3F6CCB2B58494800F71642 /* HabitRowView.swift */,
 				0E3F6CCC2B58494800F71642 /* NewHabitView.swift */,
 				0E3F6CCD2B58494800F71642 /* HabitsViewModel.swift */,
+				0ED4368F2B58AFFA006DA909 /* EditHabitView.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				0E3F6CD42B58494800F71642 /* HabitsViewModel.swift in Sources */,
 				0E3F6CDD2B58497B00F71642 /* HabitLocalService.swift in Sources */,
 				0E3F6CD12B58494800F71642 /* HabitsMainView.swift in Sources */,
+				0ED436902B58AFFA006DA909 /* EditHabitView.swift in Sources */,
 				0E3F6CD52B58494800F71642 /* LeaderboardView.swift in Sources */,
 				0E3F6CDE2B58497B00F71642 /* UserDefaultsHabitLocalService.swift in Sources */,
 				0E3F6CDF2B58497B00F71642 /* HabitsRepository.swift in Sources */,

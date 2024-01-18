@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HabitDetailView: View {
     
-    let habit: Habit
+    @EnvironmentObject var coordinator: Coordinator
+    
+    var habit: Habit
     
     // MARK: esto lo borro, es para el set de fechas
     let datesComponents: Set<DateComponents> = [
@@ -33,6 +35,13 @@ struct HabitDetailView: View {
                 .padding(.bottom, 120)
             Spacer()
         }).padding()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: coordinator.makeEditHabitView(habit: habit)) {
+                                    Text("Editar")
+                                }
+                            }
+                }
        
     }
     

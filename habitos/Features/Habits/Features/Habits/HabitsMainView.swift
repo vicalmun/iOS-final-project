@@ -48,7 +48,7 @@ struct HabitsMainView: View {
                                       Label("Delete", systemImage: "trash")
                                   }
                                   Button{
-                                      viewModel.delete(habit: habit)
+                                      //
                                   } label: {
                                       Image(systemName: "pencil")
                                   }.tint(.orange)

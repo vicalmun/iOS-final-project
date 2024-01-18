@@ -13,24 +13,21 @@ class HabitsViewModel: ObservableObject {
     // VM es quien provee datos a la vista
     
     private let habitsRepository: HabitsRepository
+    private let datesRepository: DatesRepository
 
     // variable que representa el array de hábitos (se inicializa vacío)
     @Published var habits = [Habit]()
     
     @Published var showErrorMessage = false
     
+    @Published var lastResetDate: DateComponents!
     
-    init(habitsRepository: HabitsRepository) {
+    init(habitsRepository: HabitsRepository, datesRepository: DatesRepository) {
         self.habitsRepository = habitsRepository
+        self.datesRepository = datesRepository
     }
-        
-    // no sé si va aquí, peeero
-//    func createHabit (name: String, desc: String, times: Int){
-//        let habitAux = Habit(id: UUID(), name: name, description: desc, startDate: Date.now, isCompleted: false, isFavourite: false, timesPerDay: times)
-//        habits.append(habitAux)
-//    }
     
-    
+    // MARK: CRUD de hábitos + extra
     func delete (habit: Habit){
         do {
             try habitsRepository.deleteHabit(habit: habit)
@@ -57,10 +54,6 @@ class HabitsViewModel: ObservableObject {
         }
     }
     
-    
-    
-    
-    // TODO: editHabit tiene que eliminar el hábito de la lista y añadir el nuevo en su lugar -> es literal lo que hace el edit habit del repo -> que es lo que hace el edit de la implementacion (well)
     func editHabit(habit: Habit) {
         do {
             try habitsRepository.editHabit(habit: habit)
@@ -69,8 +62,6 @@ class HabitsViewModel: ObservableObject {
         }
     }
     
-    
-    // TODO: markAsCompleted -> edita el habito para cambiar el valor de isCompleted -> me la llevo al repo
     func markCompletedOneTimeMore (habit: Habit) async{
         do {
             try habitsRepository.markAsCompletedOneTime(habit: habit)
@@ -80,4 +71,27 @@ class HabitsViewModel: ObservableObject {
         await getHabits()
     }
     
+    // MARK: Variable global para reinicar las fechas
+    func makeDateComponents (date: Date) -> DateComponents {
+        return Calendar.current.dateComponents([.year, .month, .day], from: date)
+    }
+
+    func checkAndResetMarkedTimes() {
+        do {
+            let currentDate = Date.now
+            // si no es la misma fecha: (ergo ha cambiado)
+            if !Calendar.current.isDate(currentDate, inSameDayAs: try datesRepository.getLastResetDate()) {
+                for i in 0..<habits.count {
+                    habits[i].markedTimes = 0
+                }
+                try datesRepository.saveLastResetDate(date: currentDate)
+                try habitsRepository.save(habits: habits) // Guarda los cambios en UserDefaults
+            }
+        
+        
+            lastResetDate = makeDateComponents(date: try datesRepository.getLastResetDate())
+        } catch{
+            showErrorMessage = true
+        }
+        }
 }

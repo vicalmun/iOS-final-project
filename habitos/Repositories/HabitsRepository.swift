@@ -54,6 +54,24 @@ struct HabitsRepository {
     func markAsCompletedOneTime (habit: Habit) throws {
         do {
             habit.markedTimes += 1
+            
+            if habit.markedTimes >= habit.timesPerDay {
+                try addTodayDateToCalendarWhenHabitIsCompleted(habit: habit)
+            }
+            try editHabit(habit: habit)
+        } catch {
+            throw error
+        }
+    }
+    
+    func addTodayDateToCalendarWhenHabitIsCompleted (habit: Habit) throws {
+        do {
+            let today = Calendar.current.dateComponents([.year, .month, .day], from: Date.now)
+            
+            if !habit.completedDates.contains(today){
+                habit.completedDates.insert(today)
+            }
+            
             try editHabit(habit: habit)
         } catch {
             throw error

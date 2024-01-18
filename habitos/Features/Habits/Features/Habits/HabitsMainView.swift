@@ -47,11 +47,11 @@ struct HabitsMainView: View {
                                   } label: {
                                       Label("Delete", systemImage: "trash")
                                   }
-                                  Button{
-                                      //
-                                  } label: {
-                                      Image(systemName: "pencil")
-                                  }.tint(.orange)
+//                                  Button{
+//                                      //
+//                                  } label: {
+//                                      Image(systemName: "pencil")
+//                                  }.tint(.orange)
                               }
                     }
                 }.task {
@@ -69,6 +69,8 @@ struct HabitsMainView: View {
                     coordinator.makeNewHabitView()
                 }.refreshable {
                     await viewModel.getHabits()
+                }.alert(isPresented: $viewModel.showErrorMessage) {
+                    Alert(title: Text("Ups, ha ocurido un error"), message: Text("Algo no ha salido como esperábamos :("), dismissButton: .cancel())
                 }
             }
         }

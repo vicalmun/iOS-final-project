@@ -11,6 +11,7 @@ class Coordinator: ObservableObject {
     
     // ahora el max nivel de implemtenacion es el de VM (pq estoy mockeando todo) así que no necesito acceder a nada
     private let habitsRepo: HabitsRepository
+    private let datesRepo: DatesRepository = DatesRepository()
 
     init() {
         
@@ -29,7 +30,7 @@ class Coordinator: ObservableObject {
     }
     
     private func makeHabitsViewViewModel() -> HabitsViewModel {
-        .init(habitsRepository: habitsRepo)
+        .init(habitsRepository: habitsRepo, datesRepository: datesRepo)
     }
     
     // MARK: - HabitDetailView

@@ -19,6 +19,9 @@ struct HabitsRepository {
         self.localService = localService
     }
     
+    
+    
+    
     func save (habits: [Habit]) throws {
         try localService.save(habits: habits)
     }
@@ -43,6 +46,16 @@ struct HabitsRepository {
             try save(habits: habits)
         }
         catch {
+            print("ha petado aqui")
+            throw error
+        }
+    }
+    
+    func markAsCompletedOneTime (habit: Habit) throws {
+        do {
+            habit.markedTimes += 1
+            try editHabit(habit: habit)
+        } catch {
             throw error
         }
     }

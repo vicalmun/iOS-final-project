@@ -10,8 +10,7 @@ import SwiftUI
 struct HabitRowView: View {
     
     let habit: Habit
-    
-    @State private var progress = 0.5
+        
     var body: some View {
         HStack{
             VStack(alignment: .leading, content: {
@@ -21,18 +20,18 @@ struct HabitRowView: View {
                 ProgressView(value: habit.process)
                     .progressViewStyle(LinearProgressViewStyle(tint: Color.cyan))
                     .lineLimit(1, reservesSpace: true)
-                    .frame(minWidth: 1, idealWidth: 150, maxWidth: 200)
+                    .frame(minWidth: 1, idealWidth: 125, maxWidth: 150)
 
             })
             Spacer()
             VStack{
-                Text("Fin")
+                Text("Hoy")
                     .font(.title3)
                     .foregroundStyle(Color(.gray))
-//                Text("\(habit.getFormatedDayDate())")
-//                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                    .font(.title)
-//                    .foregroundStyle(Color(.cyan))
+                Text("\(habit.markedTimes)/\(habit.timesPerDay)")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                    .foregroundStyle(Color(.cyan))
                 
             }
             Spacer()

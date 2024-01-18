@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct HabitTrackerApp: App {
     let coord = Coordinator()
-//    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {

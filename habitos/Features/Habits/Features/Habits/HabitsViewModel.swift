@@ -25,10 +25,10 @@ class HabitsViewModel: ObservableObject {
     }
         
     // no sé si va aquí, peeero
-    func createHabit (name: String, desc: String){
-        let habitAux = Habit(id: UUID(), name: name, description: desc, process: 0, startDate: Date.now, isCompleted: false, isFavourite: false)
-        habits.append(habitAux)
-    }
+//    func createHabit (name: String, desc: String, times: Int){
+//        let habitAux = Habit(id: UUID(), name: name, description: desc, startDate: Date.now, isCompleted: false, isFavourite: false, timesPerDay: times)
+//        habits.append(habitAux)
+//    }
     
     
     func delete (habit: Habit){
@@ -43,8 +43,9 @@ class HabitsViewModel: ObservableObject {
         do {
             try await habitsRepository.addHabit(habit: habit)
         } catch {
-            
+            showErrorMessage = true
         }
+        await getHabits()
     }
     
     @MainActor
@@ -57,9 +58,26 @@ class HabitsViewModel: ObservableObject {
     }
     
     
-    // TODO: editHabit tiene que eliminar el hábito de la lista y añadir el nuevo en su lugar
     
     
-    // TODO: markAsCompleted -> edita el habito para cambiar el valor de isCompleted
+    // TODO: editHabit tiene que eliminar el hábito de la lista y añadir el nuevo en su lugar -> es literal lo que hace el edit habit del repo -> que es lo que hace el edit de la implementacion (well)
+    func editHabit(habit: Habit) {
+        do {
+            try habitsRepository.editHabit(habit: habit)
+        } catch {
+            showErrorMessage = true
+        }
+    }
+    
+    
+    // TODO: markAsCompleted -> edita el habito para cambiar el valor de isCompleted -> me la llevo al repo
+    func markCompletedOneTimeMore (habit: Habit) async{
+        do {
+            try habitsRepository.markAsCompletedOneTime(habit: habit)
+        } catch {
+            showErrorMessage = true
+        }
+        await getHabits()
+    }
     
 }

@@ -12,10 +12,7 @@ struct HabitsMainView: View {
     @StateObject var viewModel: HabitsViewModel
     @EnvironmentObject var coordinator: Coordinator
     
-    
     @State private var showNewHabitView = false
-
-    
     
     var body: some View {
         VStack {
@@ -25,22 +22,24 @@ struct HabitsMainView: View {
                         // TODO: meter swipeActios a los hábitos para marcar como completado de izq-drch, editar y eliminar de drch-izq
                         // So, cambiar la vista de detalle
                         createHabitRow(habit: habit)
-                        
                             .swipeActions(edge: .leading,
                                           allowsFullSwipe: true){
                                 Button{
+                                    Task {
+                                        await viewModel.markCompletedOneTimeMore(habit: habit)
+                                    }
                                 } label: {
                                     Image(systemName: "checkmark")
                                 }.tint(.cyan)
-                                Button{
-                                } label: {
-                                    if !habit.isFavourite {
-                                        Label("Complete", systemImage: "star.fill").tint(.yellow)
-                                    } else {
-                                        Label("Complete", systemImage: "star.slash")
-                                    }
-                                    
-                                }
+//                                Button{
+//                                } label: {
+//                                    if !habit.isFavourite {
+//                                        Label("Complete", systemImage: "star.fill").tint(.yellow)
+//                                    } else {
+//                                        Label("Complete", systemImage: "star.slash")
+//                                    }
+//                                    
+//                                }
                             }
                               .swipeActions(edge: .trailing, allowsFullSwipe: false){
                                   Button(role: .destructive) {
@@ -49,6 +48,7 @@ struct HabitsMainView: View {
                                       Label("Delete", systemImage: "trash")
                                   }
                                   Button{
+                                      viewModel.delete(habit: habit)
                                   } label: {
                                       Image(systemName: "pencil")
                                   }.tint(.orange)
@@ -58,21 +58,11 @@ struct HabitsMainView: View {
                     await viewModel.getHabits()
                 }
                 .navigationTitle("Mis hábitos")
-//                .toolbar {
-//                    ToolbarItem {
-//                        Button(action: {
-//                            
-//                        }, label: {
-//                            Image(systemName: "plus")
-//                        })
-//                    }
-//                }
                 .toolbar {
                     ToolbarItem {
                         Button("Añadir", systemImage: "plus") {
                             showNewHabitView = true
                         }
-                        
                     }
                 }
                 .sheet(isPresented: $showNewHabitView) {

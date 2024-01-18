@@ -10,7 +10,7 @@ import Foundation
 
 struct HabitLocalImpl: HabitLocalService {
     
-    private let habitsUDKey = "habits"
+    private let habitsUDKey = "habitos"
     
     func save (habits: [Habit]) throws {
         let data = try JSONEncoder().encode(habits)

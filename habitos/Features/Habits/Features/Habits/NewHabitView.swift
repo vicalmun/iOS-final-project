@@ -11,7 +11,7 @@ struct NewHabitView: View {
     
     @State private var name = ""
     @State private var description = ""
-    @State private var timesPerDay = 1
+    @State private var timesPerDay: Int = 1
     @State private var selectedCategory = 1
     @Environment(\.dismiss) var dismiss
     
@@ -33,25 +33,16 @@ struct NewHabitView: View {
                     TextField("Nombre", text: $name)
                     TextField("Descripción", text: $description)
                     Stepper("Veces al día: \(timesPerDay)", value: $timesPerDay, in: 1...10)
-                    
-                    // Selection es donde se va a guardar lo que elijamos
-                    // se guarda el .tag
-                    //                    Picker("Categoría", selection: $selectedCategory) {
-                    //                        ForEach(dataSource.foodCategories){ foodCategory in
-                    //                            Text(foodCategory.name).tag(foodCategory.id)
-                    //                        }
-                    //                    }
                 }
                 
                 Section {
                     HStack {
                         Spacer()
                         Button("Guardar") {
-                            let habit = Habit(id: UUID(), name: name, description: description, process: 0, startDate: Date.now)
+                            let habit = Habit(id: UUID(), name: name, description: description, startDate: Date.now, timesPerDay: timesPerDay)
                             
                             Task {
                                 await habitsViewModel.addHabitToList(habit: habit)
-                                await habitsViewModel.getHabits()
                             }
                             dismiss()
                         }

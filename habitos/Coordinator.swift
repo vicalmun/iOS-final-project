@@ -9,20 +9,14 @@ import Foundation
 
 class Coordinator: ObservableObject {
     
-    // ahora el max nivel de implemtenacion es el de VM (pq estoy mockeando todo) así que no necesito acceder a nada
     private let habitsRepo: HabitsRepository
     private let datesRepo: DatesRepository = DatesRepository()
 
     init() {
-        
-        // el servicio es la impl pq lo hereda, relax
         let habitsLocalService: HabitLocalService = HabitLocalImpl()
         
         habitsRepo = HabitsRepository(localService: habitsLocalService)
     }
-    
-    // 16/01/24 ya no, así que empiezo a meter servicios y esas cosas por aquí sin acordarme de nada xd
-    
     
     // MARK: - HabitsView
     func makeHabitMainView() -> HabitsMainView {

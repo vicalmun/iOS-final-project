@@ -15,11 +15,6 @@ struct NewHabitView: View {
     @State private var selectedCategory = 1
     @Environment(\.dismiss) var dismiss
     
-//    @StateObject private var habitsViewModel: HabitsViewModel
-//
-//    init(habitsViewModel: HabitsViewModel) {
-//        _habitsViewModel = StateObject(wrappedValue: habitsViewModel)
-//    }
     @ObservedObject private var habitsViewModel: HabitsViewModel
 
     init(habitsViewModel: HabitsViewModel) {

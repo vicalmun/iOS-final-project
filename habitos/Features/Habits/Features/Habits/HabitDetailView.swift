@@ -12,19 +12,7 @@ struct HabitDetailView: View {
     @EnvironmentObject var coordinator: Coordinator
     
     var habit: Habit
-    
-    // MARK: esto lo borro, es para el set de fechas
-    let datesComponents: Set<DateComponents> = [
-//        DateComponents(year: 2024, month: 1, day: 16),
-//        DateComponents(year: 2024, month: 1, day: 15),
-//        DateComponents(year: 2024, month: 1, day: 14),
-//        DateComponents(year: 2024, month: 1, day: 12)
-    ]
 
-
-// MARK: set de fehcas hasta aqui
-    
-    
     var body: some View {
         VStack(alignment: .center , content: {
             createDetailView(habit: habit)

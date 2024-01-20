@@ -10,12 +10,10 @@
 import Foundation
 
 class HabitsViewModel: ObservableObject {
-    // VM es quien provee datos a la vista
     
     private let habitsRepository: HabitsRepository
     private let datesRepository: DatesRepository
 
-    // variable que representa el array de hábitos (se inicializa vacío)
     @Published var habits = [Habit]()
     
     @Published var showErrorMessage = false

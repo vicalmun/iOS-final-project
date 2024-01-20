@@ -19,8 +19,6 @@ struct HabitsMainView: View {
             NavigationStack {
                 List {
                     ForEach(viewModel.habits){ habit in
-                        // TODO: meter swipeActios a los hábitos para marcar como completado de izq-drch, editar y eliminar de drch-izq
-                        // So, cambiar la vista de detalle
                         createHabitRow(habit: habit)
                             .swipeActions(edge: .leading,
                                           allowsFullSwipe: true){
@@ -31,15 +29,6 @@ struct HabitsMainView: View {
                                 } label: {
                                     Image(systemName: "checkmark")
                                 }.tint(.cyan)
-//                                Button{
-//                                } label: {
-//                                    if !habit.isFavourite {
-//                                        Label("Complete", systemImage: "star.fill").tint(.yellow)
-//                                    } else {
-//                                        Label("Complete", systemImage: "star.slash")
-//                                    }
-//                                    
-//                                }
                             }
                               .swipeActions(edge: .trailing, allowsFullSwipe: false){
                                   Button(role: .destructive) {
@@ -47,11 +36,6 @@ struct HabitsMainView: View {
                                   } label: {
                                       Label("Delete", systemImage: "trash")
                                   }
-//                                  Button{
-//                                      //
-//                                  } label: {
-//                                      Image(systemName: "pencil")
-//                                  }.tint(.orange)
                               }
                     }
                 }.task {
@@ -76,9 +60,6 @@ struct HabitsMainView: View {
         }
     }
     
-    // TODO: mover esta funcion al coordinator
-    // no, pq creo que tendría que pasarsela a la vista para usarla
-    // o no por eso de que sea un environmentobject
     func createHabitRow(habit: Habit) -> some View {
         NavigationLink {
             HabitDetailView(habit: habit)

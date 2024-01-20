@@ -17,7 +17,6 @@ class Habit: Identifiable, Codable {
     var timesPerDay: Int
     var markedTimes: Int
     var completedDates: Set<DateComponents>
-//    var process: Double = 0.0
     var process: Double {
         if markedTimes == 0 {
             return 0.0
